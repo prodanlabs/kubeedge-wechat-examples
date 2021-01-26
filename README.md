@@ -49,6 +49,6 @@ make build-client-arm
 ```
 > 其他的看Makefile文件
 
-
 感兴趣的朋友，可以去公众号看看效果~~~
-<img src="https://raw.githubusercontent.com/prodanlabs/scheduler-framework/main/image/weixin.png" width="460">
+
+<img src="https://github.com/prodanlabs/kubeedge-wechat-examples/blob/main/image/weixin.png" width="460">
