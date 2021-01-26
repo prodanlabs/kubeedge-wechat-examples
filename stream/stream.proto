@@ -1,0 +1,28 @@
+syntax = "proto3";
+option go_package = ".;stream";
+package stream;
+
+// 定义发送请求信息
+message Request{
+  string data = 1;
+}
+
+// 定义响应信息
+message Response{
+  int32 code = 1;
+  string value = 2;
+}
+
+// 定义流式请求信息
+message StreamRequest{
+  int32 mun = 1;
+  string streamData = 2;
+}
+
+// 定义的服务
+service StreamClient{
+  // 简单模式 rpc ，客户端通过stub发起请求,等待服务端返回结果;
+  rpc SimpleMode (Request) returns (Response){};
+  // 客户端流式 rpc ，服务端等到客户端所有请求发送完毕后，向客户端发送一次消息;
+  rpc Upload (stream StreamRequest) returns (Response){};
+}
